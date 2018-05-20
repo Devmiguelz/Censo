@@ -1,0 +1,228 @@
+/*///////////////////////////// [ TIPOS DE LETRAS ] //////////////////////////////////*/
+
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('../fonts/poppins/Poppins-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-Medium;
+  src: url('../fonts/poppins/Poppins-Medium.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url('../fonts/poppins/Poppins-Bold.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-SemiBold;
+  src: url('../fonts/poppins/Poppins-SemiBold.ttf'); 
+}
+
+/*///////////////////////////// [ TIPOS DE LETRAS ] //////////////////////////////////*/
+
+/*///////////////////////////// [ ESTILOS GENERALES ] //////////////////////////////////*/
+#prevBtn,#nextBtn{
+  margin-left: 1em;
+  border-radius: 25px;
+}
+
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+.btn-next{
+  color: #fff;
+  background-color: #942fc5;
+  border-color: #942fc5; 
+  font-family: Poppins-Medium;
+  font-size: 16px;
+  line-height: 1.2;
+  text-transform: uppercase; 
+}
+
+.btn-back{
+  color: #fff;
+  background-color: #bbbbbb;
+  border-color: #bbbbbb; 
+  font-family: Poppins-Medium;
+  font-size: 16px;
+  line-height: 1.2;
+  text-transform: uppercase; 
+}
+
+a.back:hover{
+  text-decoration: none;
+  color: #fff;
+  opacity: 0.8;
+}
+a.back:link{
+  text-decoration: none;
+  color: #fff;
+}
+.back{
+  border-radius: 25px;
+  color: #fff;
+  background-color: #942fc5;
+  border-color: #942fc5; 
+  font-family: Poppins-Medium;
+  font-size: 16px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.Fondo{
+  background-image: url('../img/bg-01.jpg');
+}
+
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+.titulo{
+  padding-bottom: 14px;
+}
+.labe{
+  font-family: Poppins-Regular;
+  font-size: 16px;
+  color: #333333;
+  line-height: 1.5;
+  padding-left: 7px;
+}
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #4CAF50;
+}
+.form-row{
+  padding-bottom: 23px;
+}
+.btn-warning{
+  color: #ffffff;
+}
+.card-register{
+  max-width: 60rem;
+  border-radius: 10px;
+  width: 60%;
+  min-width: 27rem;
+  height: 20%;
+}
+.progress_bar{
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.seccion11,.seccion22,.seccion33,.seccion44{
+  height: 170px;
+  width: 280px;
+  background-color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #d8d0d0;
+}
+.salir>a:link{
+  text-decoration: none;
+}
+.salir>a{
+  color: white;
+}
+.salir{
+  background-color: red;
+  width: 58px;
+  height: 33px;
+}
+
+.texto{
+  color: black;
+  margin-top: 3px;
+}
+.fondo{
+  background-color: white;
+}
+.titulo{
+  color: black;
+}
+
+/*///////////////////////////// [ ESTILOS GENERALES ] //////////////////////////////////*/
+
+/*///////////////////////////// [ ESTILOS REGISTRAR ] //////////////////////////////////*/
+.imag{
+  width: 178px;
+  height: 122px;
+  margin: 4px 0px 0px 46px;
+}
+
+#Form_Registrar {
+  background-color: #ffffff;
+  margin: 5px auto;
+  font-family: 'Roboto', sans-serif;
+  width: 90%;
+  min-width: 300px;
+}
+
+/*///////////////////////////// [ ESTILOS REGISTRAR ] //////////////////////////////////*/
+
+/*///////////////////////////// [ ESTILOS HOME ] //////////////////////////////////*/
+.B_empezar{
+  border-radius: 0px;
+  width: 280px;
+  height: 42px;
+}
+.B_empezar:hover{
+  border-radius: 0px;
+  color: white;
+}
+
+/*///////////////////////////// [ ESTILOS HOME ] //////////////////////////////////*/
+
+
+/*///////////////////////////// [ ESTILOS VIVIENDA ] //////////////////////////////////*/
+
+
+/*///////////////////////////// [ ESTILOS VIVIENDA ] //////////////////////////////////*/
+
+
+/*///////////////////////////// [ ESTILOS HOGAR ] //////////////////////////////////*/
+
+
+/*///////////////////////////// [ ESTILOS HOGAR ] //////////////////////////////////*/
+
+.campos {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
