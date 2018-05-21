@@ -1,3 +1,11 @@
+<?php
+session_start();
+include '../Conexion/conexion.php';
+if(isset($_SESSION['estado'])){ 
+	if($_SESSION['tipo'] == 0){ 
+		$nombre = $_SESSION["nombre"];
+		$apellido = $_SESSION["apellido"];
+	?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -97,3 +105,11 @@
 <script src="../Public/js/script_hogar.js"></script>
 </body>
 </html>
+<?php
+	}else if($_SESSION['tipo'] == 1){
+		echo '<script> window.location="admin.php"; </script>';
+	}
+}else{
+	echo '<script> window.location="../index.php"; </script>';
+}
+?>

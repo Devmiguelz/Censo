@@ -2,8 +2,12 @@
   session_start();
   include 'Conexion/conexion.php';
   if(isset($_SESSION['estado'])){
-    echo '<script> window.location="View/home.php"; </script>';
-}
+    if ($_SESSION['tipo'] == 0) {
+      echo '<script> window.location="View/home.php"; </script>';
+    }elseif ($_SESSION['tipo'] == 1) {
+      echo '<script> window.location="View/admin.php"; </script>';
+    }
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,7 +67,7 @@
         </div>
 
         <div class="text-right p-t-8 p-b-31">
-          <a href="View/olvido-contraseña.html">
+          <a href="View/olvido-contraseña.php">
             Olvido su contraseña
           </a>
         </div>

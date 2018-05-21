@@ -1,6 +1,10 @@
+<?php
+  session_start();
+  include '../Conexion/conexion.php';
+  if(!isset($_SESSION['estado'])){ 
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -141,8 +145,8 @@
               <div class="tab">Seleccione la fecha de Nacimiento :
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
-                    <label for="validationFechaNac">Año</label>
-                    <select class="form-control" id="validationFechaNac">
+                    <label>Año</label>
+                    <select class="form-control">
                       <option>AAAA</option>
                       <?php
                       for($anio=(date("Y")); 1910<=$anio; $anio--) {
@@ -151,8 +155,8 @@
                     </select>
                   </div>
                   <div class="col-md-4 mb-3">
-                    <label for="validationDefault04">Mes</label>
-                    <select class="form-control" id="validationDefault04">
+                    <label>Mes</label>
+                    <select class="form-control">
                       <option>MM</option>
                       <option value="1">01</option>
                       <option value="2">02</option>
@@ -169,8 +173,8 @@
                     </select>
                   </div>
                   <div class="col-md-4 mb-3">
-                    <label for="validationDefault05">Dia</label>
-                    <select class="form-control" id="validationDefault05">
+                    <label>Dia</label>
+                    <select class="form-control">
                       <option>DD</option>
                       <option value="1">01</option>
                       <option value="2">02</option>
@@ -250,3 +254,10 @@
   </body>
 
   </html>
+<?php 
+}else if($_SESSION['tipo'] == 0){
+  echo '<script> window.location="home.php"; </script>';
+}else if($_SESSION['tipo'] == 1){
+  echo '<script> window.location="admin.php"; </script>';
+}
+?>

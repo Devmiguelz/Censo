@@ -1,3 +1,10 @@
+<?php
+session_start();
+include '../Conexion/conexion.php';
+if(isset($_SESSION['estado'])){ 
+	if($_SESSION['tipo'] == 0){ 
+		
+	?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -270,3 +277,11 @@
 	<script src="../Public/js/script_vivienda.js"></script>
 </body>
 </html>
+<?php
+	}else if($_SESSION['tipo'] == 1){
+		echo '<script> window.location="admin.php"; </script>';
+	}
+}else{
+	echo '<script> window.location="../index.php"; </script>';
+}
+?>

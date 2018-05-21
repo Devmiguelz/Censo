@@ -13,10 +13,10 @@ jQuery(document).on('submit','#Form_Login',function(event){
   })
   .done(function(datos){
   if (datos.error == false) {
-      if (datos.tipo == 'Admin') {
+      if (datos.tipo == 0) {
         location = 'View/home.php';
-      }else if (datos.tipo == 'Usuario') {
-        windows.location.replace('View/home.php');
+      }else if (datos.tipo == 1) {
+        location = 'View/admin.php';
       }
     }else {
       $('.error').slideDown('slow');

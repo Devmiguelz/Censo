@@ -112,9 +112,6 @@ a.back:link{
 .step.active {
   opacity: 1;
 }
-.titulo{
-  padding-bottom: 14px;
-}
 .labe{
   font-family: Poppins-Regular;
   font-size: 16px;
@@ -143,36 +140,12 @@ a.back:link{
   padding-top: 1em;
   padding-bottom: 1em;
 }
-
-.seccion11,.seccion22,.seccion33,.seccion44{
-  height: 170px;
-  width: 280px;
-  background-color: white;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #d8d0d0;
-}
-.salir>a:link{
-  text-decoration: none;
-}
-.salir>a{
-  color: white;
-}
-.salir{
-  background-color: red;
-  width: 58px;
-  height: 33px;
-}
-
 .texto{
   color: black;
   margin-top: 3px;
 }
 .fondo{
   background-color: white;
-}
-.titulo{
-  color: black;
 }
 
 /*///////////////////////////// [ ESTILOS GENERALES ] //////////////////////////////////*/
@@ -195,6 +168,31 @@ a.back:link{
 /*///////////////////////////// [ ESTILOS REGISTRAR ] //////////////////////////////////*/
 
 /*///////////////////////////// [ ESTILOS HOME ] //////////////////////////////////*/
+.salir>a:link{
+  text-decoration: none;
+}
+.salir>a:hover{
+  text-decoration: none;
+  color: white;
+}
+.salir:hover{
+  opacity: 0.8;
+}
+.salir>a{
+  color: white;
+}
+.salir{
+  color: #fff;
+  background-color: #942fc5;
+  border-color: #942fc5; 
+  font-family: Poppins-Medium;
+  font-size: 16px;
+  line-height: 1.2;
+  text-transform: uppercase; 
+}
+.subtitulo{
+  font-size: 19px;
+}
 .B_empezar{
   border-radius: 0px;
   width: 280px;
@@ -204,7 +202,26 @@ a.back:link{
   border-radius: 0px;
   color: white;
 }
+.titulo{
+  font-family: Poppins-Regular;
+  font-size: 36px;
+  color: black;
+  line-height: 1.5;
+  padding-top: 16px;
+}
+.espacio{
+  padding-top: 30px;
+}
 
+.seccion11,.seccion22,.seccion33,.seccion44{
+  height: 170px;
+  width: 280px;
+  background-color: white;
+  border-style: solid;
+  border-width: 4px 4px 0px 4px;
+  border-radius: 5px 5px 0px 0px;
+  border-color: #e3e5e6;
+}
 /*///////////////////////////// [ ESTILOS HOME ] //////////////////////////////////*/
 
 
