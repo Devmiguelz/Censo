@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  include 'Conexion/conexion.php';
+  if(isset($_SESSION['estado'])){
+    echo '<script> window.location="View/home.php"; </script>';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,13 +36,16 @@
   <!--===============================================================================================-->
   <link rel="stylesheet" type="text/css" href="Public/css/util.css">
   <link rel="stylesheet" type="text/css" href="Public/css/main.css">
+  <link rel="stylesheet" type="text/css" href="Public/css/CustomEstilos.css">
   <!--===============================================================================================-->
 </head>
-
+<div class="error">
+  <span >Correo electrónico o contraseña incorrecta</span>
+</div>
 <div class="limiter">
   <div class="container-login100" style="background-image: url('Public/img/bg-01.jpg');">
     <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-      <form class="login100-form validate-form" id="Form_Login">
+      <form class="login100-form validate-form" id="Form_Login" method="POST">
         <span class="login100-form-title p-b-49">
           Login
         </span>
@@ -61,8 +71,8 @@
         <div class="container-login100-form-btn">
           <div class="wrap-login100-form-btn">
             <div class="login100-form-bgbtn"></div>
-            <button type="submit" class="login100-form-btn">
-              Login
+            <button type="submit" name="Login" class="login100-form-btn btn-login">
+              <img class="cargar" src="Public/images/loading.gif" alt=""><span class="log">Login</span>
             </button>
           </div>
         </div>
@@ -74,10 +84,10 @@
             </a>
           </span>
         </div>
-        </div>
-      </form>
-    </div>
+      </div>
+    </form>
   </div>
+</div>
 </div>
 
 
@@ -99,6 +109,8 @@
 <script src="Public/vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 <script src="Public/js/main.js"></script>
+<!--===============================================================================================-->
+<script src="Public/js/validar-login.js"></script>
 </body>
 
 </html>

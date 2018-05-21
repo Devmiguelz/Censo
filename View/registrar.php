@@ -220,7 +220,7 @@
                   </button>
                 </div>
                 <div class="text-left">
-                  <a class="btn back" href="../index.html">
+                  <a class="btn back" href="../index.php">
                     Back
                   </a>
                 </div>

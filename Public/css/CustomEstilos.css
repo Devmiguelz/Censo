@@ -36,7 +36,7 @@ input.invalid {
 .tab {
   display: none;
 }
-
+/*
 button {
   background-color: #4CAF50;
   color: #ffffff;
@@ -50,7 +50,7 @@ button {
 button:hover {
   opacity: 0.8;
 }
-
+*/
 #prevBtn {
   background-color: #bbbbbb;
 }
@@ -214,10 +214,25 @@ a.back:link{
 /*///////////////////////////// [ ESTILOS VIVIENDA ] //////////////////////////////////*/
 
 
-/*///////////////////////////// [ ESTILOS HOGAR ] //////////////////////////////////*/
-
-
-/*///////////////////////////// [ ESTILOS HOGAR ] //////////////////////////////////*/
+/*///////////////////////////// [ ESTILOS LOGIN ] //////////////////////////////////*/
+.error{
+  height: 48px;
+  width: 100%;
+  background-color: #942fc5;
+  color: #fff;
+  text-align: center;
+  padding: 11px;
+  font-size: 17px;
+  position: absolute;
+  border-radius:  0 0 24px 24px;
+  display: none;
+}
+.cargar{
+  width: 26px;
+  padding-right: 7px;
+  display: none;
+}
+/*///////////////////////////// [ ESTILOS LOGIN ] //////////////////////////////////*/
 
 .campos {
   padding: 10px;
