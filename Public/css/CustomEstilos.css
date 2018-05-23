@@ -32,6 +32,10 @@ input.invalid {
   background-color: #ffdddd;
 }
 
+select.invalid {
+  background-color: #ffdddd;
+}
+
 /* Hide all steps by default: */
 .tab {
   display: none;
@@ -165,6 +169,94 @@ a.back:link{
   min-width: 300px;
 }
 
+.button-label {
+  display: inline-block;
+  padding: 1em 2em;
+  margin: 0.5em;
+  cursor: pointer;
+  color: #292929;
+  border-radius: 0.25em;
+  background: #efefef;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0 -3px 0 rgba(0, 0, 0, 0.22);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.button-label:hover {
+  background: #d6d6d6;
+  color: #101010;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0 -3px 0 rgba(0, 0, 0, 0.32);
+}
+.button-label:active {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0px -1px 0 rgba(0, 0, 0, 0.22);
+}
+@media (max-width: 40em) {
+  .button-label {
+    padding: 0em 1em 3px;
+    margin: 0.25em;
+  }
+}
+
+/*///////////////////////////// [ RADIO SEXO ] //////////////////////////////////*/
+#m-button:checked + .button-label {
+  background: #806cef;
+  color: #efefef;
+}
+#m-button:checked + .button-label:hover {
+  background: #942fc5;
+  color: #e2e2e2;
+}
+#h-button:checked + .button-label {
+  background: #806cef;
+  color: #fff;
+}
+#h-button:checked + .button-label:hover {
+  background: #942fc5;
+  color: #fff;
+}
+/*///////////////////////////// [ RADIO SEXO ] //////////////////////////////////*/
+
+/*///////////////////////////// [ RADIO SERVIDOR ] //////////////////////////////////*/
+#si-button:checked + .button-label {
+  background: #806cef;
+  color: #efefef;
+}
+#si-button:checked + .button-label:hover {
+  background: #942fc5;
+  color: #e2e2e2;
+}
+#no-button:checked + .button-label {
+  background: #806cef;
+  color: #fff;
+}
+#no-button:checked + .button-label:hover {
+  background: #942fc5;
+  color: #fff;
+}
+/*///////////////////////////// [ RADIO SERVIDOR ] //////////////////////////////////*/
+.hidden {
+  display: none;
+}
+.R-buttom{
+  position: relative;
+  display: inline-grid;
+  padding-left: 1,25em;
+}
+#tamaño1,#tamaño2{
+  color: #dc3d3d;
+  font-size: 15px;
+  display: none;
+}
+#igual1,#igual2{
+  color: #dc3d3d;
+  font-size: 15px;
+  display: none;
+}
 /*///////////////////////////// [ ESTILOS REGISTRAR ] //////////////////////////////////*/
 
 /*///////////////////////////// [ ESTILOS HOME ] //////////////////////////////////*/
@@ -189,6 +281,24 @@ a.back:link{
   font-size: 16px;
   line-height: 1.2;
   text-transform: uppercase; 
+}
+a.Logout{
+  color: #fff;
+  background-color: #942fc5;
+  border-color: #942fc5; 
+  font-family: Poppins-Medium;
+  font-size: 16px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  padding: 9px;
+}
+a.Logout:link{
+  text-decoration: none;
+}
+a.Logout:hover{
+  text-decoration: none;
+  color: white;
+  opacity: 0.8;
 }
 .subtitulo{
   font-size: 19px;

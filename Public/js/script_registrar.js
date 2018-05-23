@@ -50,20 +50,74 @@ function nextPrev(n) {
 
 function validateForm() {
   // This function deals with validation of the form fields
-  var x, y, i, valid = true;
+  var x, i, valid = true;
   x = document.getElementsByClassName("tab");
-  y = x[currentTab].getElementsByTagName("input");
+  input = x[currentTab].getElementsByTagName("input");
+  selec = x[currentTab].getElementsByTagName("select");
+  
+
   // A loop that checks every input field in the current tab:
-  for (i = 0; i < y.length; i++) {
+  /*for (i = 0; i < input.length; i++) {
     // If a field is empty...
-    if (y[i].value == "") {
+    if (input[i].value == "") {
       // add an "invalid" class to the field:
-      y[i].className += " invalid";
+      input[i].className += " invalid";
       // and set the current valid status to false
       valid = false;
     }
   }
-  // If the valid status is true, mark the step as finished and valid:
+   for (i = 0; i < selec.length; i++) {
+    // If a field is empty...
+    if (selec[i].selectedIndex == 0) {
+      // add an "invalid" class to the field:
+      selec[i].className += " invalid";
+      // and set the current valid status to false
+      valid = false;
+    }
+  }
+  if (currentTab == 2) {
+    radioh = document.getElementById("h-button");
+    radiom = document.getElementById("m-button");
+    if (!radioh.checked && !radiom.checked) {
+      valid = false;
+    }else{
+      valid = true;
+    }
+  }
+  if (currentTab == 3) {
+    si_ser = document.getElementById("si-button");
+    no_ser = document.getElementById("no-button");
+    if (!si_ser.checked && !no_ser.checked) {
+      valid = false;
+    }else{
+      valid = true;
+    }
+  }
+  if (currentTab == 5) {
+    if ($("#pass1").val() === $("#pass2").val()){ 
+      if ($("#pass1").val().length >= 8) {
+        valid = true;
+      }else{
+        document.getElementById("tamaño1").style.display = "inline";
+        document.getElementById("tamaño2").style.display = "inline";
+        document.getElementById("igual1").style.display = "none";
+        document.getElementById("igual2").style.display = "none";
+        document.getElementById("pass2").className += " invalid";
+        document.getElementById("pass1").className += " invalid";
+        valid = false;
+      }
+    }else{
+      document.getElementById("igual1").style.display = "inline";
+      document.getElementById("igual2").style.display = "inline";
+      document.getElementById("tamaño1").style.display = "none";
+      document.getElementById("tamaño2").style.display = "none";
+      document.getElementById("pass2").className += " invalid";
+      document.getElementById("pass1").className += " invalid";
+      valid = false;
+    }
+  }*/
+
+  // If the valid status is true, mark the step as finished and valid:5
   if (valid) {
     document.getElementsByClassName("step")[currentTab].className += " finish";
     if (currentTab == 0 && aux < currentTab) {
