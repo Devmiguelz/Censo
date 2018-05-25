@@ -3,8 +3,9 @@ session_start();
 include '../Conexion/conexion.php';
 if(isset($_SESSION['estado'])){ 
   if($_SESSION['tipo'] == 1){ 
-    $nombre = $_SESSION["nombre"];
-    $apellido = $_SESSION["apellido"];
+    $tables = $conectar->query("SELECT * FROM persona P,tipo_sexo TS,tipo_documento TD 
+                                WHERE TS.id = P.sexo AND TD.id = P.tipo_documento");
+
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +16,7 @@ if(isset($_SESSION['estado'])){
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Bienvenido al Censo Poblacional 2018</title>
+  <title>Tablas | Censo Poblacional 2018</title>
   <!-- Bootstrap core CSS-->
   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -29,7 +30,7 @@ if(isset($_SESSION['estado'])){
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
-   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <a class="navbar-brand" href="index.html">Datos del Censo de Población y Vivienda 2018</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -78,119 +79,57 @@ if(isset($_SESSION['estado'])){
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">My Dashboard</li>
+        <li class="breadcrumb-item active">Tables</li>
       </ol>
-      <!-- Icon Cards-->
-      <div class="row">
-        <div class="col-xl-3 col-sm-6 mb-3">
-          <div class="card text-white bg-primary o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fa fa-fw fa-comments"></i>
-              </div>
-              <div class="mr-5">26 New Messages!</div>
-            </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">View Details</span>
-              <span class="float-right">
-                <i class="fa fa-angle-right"></i>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 mb-3">
-          <div class="card text-white bg-warning o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fa fa-fw fa-list"></i>
-              </div>
-              <div class="mr-5">11 New Tasks!</div>
-            </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">View Details</span>
-              <span class="float-right">
-                <i class="fa fa-angle-right"></i>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 mb-3">
-          <div class="card text-white bg-success o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fa fa-fw fa-shopping-cart"></i>
-              </div>
-              <div class="mr-5">123 New Orders!</div>
-            </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">View Details</span>
-              <span class="float-right">
-                <i class="fa fa-angle-right"></i>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 mb-3">
-          <div class="card text-white bg-danger o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fa fa-fw fa-support"></i>
-              </div>
-              <div class="mr-5">13 New Tickets!</div>
-            </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">View Details</span>
-              <span class="float-right">
-                <i class="fa fa-angle-right"></i>
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-- Area Chart Example-->
+      <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-area-chart"></i> Area Chart Example</div>
+          <i class="fa fa-table"></i> Data Table Example</div>
         <div class="card-body">
-          <canvas id="myAreaChart" width="100%" height="30"></canvas>
-        </div>
-        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-      </div>
-      <div class="row">
-        <div class="col-lg-8">
-          <!-- Example Bar Chart Card-->
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-bar-chart"></i> Bar Chart Example</div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-sm-8 my-auto">
-                  <canvas id="myBarChart" width="100" height="50"></canvas>
-                </div>
-                <div class="col-sm-4 text-center my-auto">
-                  <div class="h4 mb-0 text-primary">$34,693</div>
-                  <div class="small text-muted">YTD Revenue</div>
-                  <hr>
-                  <div class="h4 mb-0 text-warning">$18,474</div>
-                  <div class="small text-muted">YTD Expenses</div>
-                  <hr>
-                  <div class="h4 mb-0 text-success">$16,219</div>
-                  <div class="small text-muted">YTD Margin</div>
-                </div>
-              </div>
-            </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <!-- Example Pie Chart Card-->
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-pie-chart"></i> Pie Chart Example</div>
-            <div class="card-body">
-              <canvas id="myPieChart" width="100%" height="100"></canvas>
-            </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          <div class="table-responsive">
+            <table class="table table-bordered" id="TablaPersonas" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Segundo Nombre</th>
+                  <th>Apellido</th>
+                  <th>Segundo Apellido</th>
+                  <th>Documento</th>
+                  <th>Tipo Documento</th>
+                  <th>Fecha de Nacimiento</th>
+                  <th>Sexo</th>
+                  <th>Servidor Publico</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Segundo Nombre</th>
+                  <th>Apellido</th>
+                  <th>Segundo Apellido</th>
+                  <th>Documento</th>
+                  <th>Tipo Documento</th>
+                  <th>Fecha de Nacimiento</th>
+                  <th>Sexo</th>
+                  <th>Servidor Publico</th>
+                </tr>
+              </tfoot>
+              <tbody>
+                <?php while ($mostrar = $tables->fetch_assoc() ) {       ?>
+                <tr>
+                  <td><?php echo $mostrar['nombre'] ?></td>
+                  <td><?php echo $mostrar['segundo_nombre'] ?></td>
+                  <td><?php echo $mostrar['apellido'] ?></td>
+                  <td><?php echo $mostrar['segundo_apellido'] ?></td>
+                  <td><?php echo $mostrar['documento'] ?></td>
+                  <td><?php echo $mostrar['descripcion'] ?></td>
+                  <td><?php echo $mostrar['fecha_nacimiento'] ?></td>
+                  <td><?php echo $mostrar['genero'] ?></td>
+                  <td><?php echo $mostrar['ser_publico'] ?></td>
+                </tr>
+                <?php }    ?>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -240,9 +179,8 @@ if(isset($_SESSION['estado'])){
     <!-- Custom scripts for all pages-->
     <script src="../Public/js/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
-    <script src="../Public/js/sb-admin-datatables.min.js"></script>
+    <script src="../Public/js/sb-admin-datatables.js"></script>
     <script src="../Public/js/sb-admin-charts.min.js"></script>
-    <script src="../Public/js/bootstrap.js"></script>
   </div>
 </body>
 

@@ -282,6 +282,20 @@ a.back:link{
   line-height: 1.2;
   text-transform: uppercase; 
 }
+
+.restar{
+  color: #fff;
+  background-color: #942fc5;
+  border-color: #942fc5; 
+  font-family: Poppins-Medium;
+  font-size: 16px;
+  line-height: 1.2;
+  text-transform: uppercase; 
+}
+.restar:hover{
+  opacity: 0.8;
+}
+
 a.Logout{
   color: #fff;
   background-color: #942fc5;
@@ -353,6 +367,20 @@ a.Logout:hover{
   position: absolute;
   border-radius:  0 0 24px 24px;
   display: none;
+  z-index: 5;
+}
+.error-enviar{
+  height: 48px;
+  width: 100%;
+  background-color: #942fc5;
+  color: #fff;
+  text-align: center;
+  padding: 11px;
+  font-size: 17px;
+  position: absolute;
+  border-radius:  0 0 24px 24px;
+  display: none;
+  z-index: 5;
 }
 .cargar{
   width: 26px;
@@ -367,4 +395,8 @@ a.Logout:hover{
   font-size: 17px;
   font-family: Raleway;
   border: 1px solid #aaaaaa;
+}
+
+.enviado{
+  display: none;
 }
